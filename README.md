@@ -1,6 +1,4 @@
-# Reign Fullstack Developer Test
-
-# Commands
+# Reign Fullstack Developer Test 👑
 
 ## On the client folder
 
