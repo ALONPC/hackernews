@@ -14,8 +14,10 @@ exports.getHits = async (req, res, next) => {
 exports.deleteHit = async ({ params: { id } }, res, next) => {
   try {
     await Hit.findByIdAndRemove(id);
+    const msg = `Hit ${id} was deleted successfully!`;
+    console.log(msg);
     res.send({
-      message: `Hit ${id} was deleted successfully!`,
+      message: msg,
     });
   } catch (err) {
     res.status(500).send({
