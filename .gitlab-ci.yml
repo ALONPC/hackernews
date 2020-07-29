@@ -12,13 +12,7 @@ build-min-code:
 run-unit-test:
   stage: test
   script:
-    - npm run test
-# deploy-staging:
-#   stage: deploy
-#   script:
-#     - npm run deploy-stage
-#   only:
-#     - develop
+    - npm test
 deploy-production:
   stage: deploy
   script:
