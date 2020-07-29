@@ -34,7 +34,6 @@ export const Feed = () => {
     );
     setHits(hits);
     setLoading(false);
-    console.log("fetched!");
   };
 
   const handleDelete = (id) => {
@@ -44,10 +43,7 @@ export const Feed = () => {
         "Content-Type": "application/json",
       },
     };
-    const deletedHit = fetch(`${API}/${id}`, options)
-      .then((res) => res.json())
-      .then((res) => console.log(res));
-    console.log("handleDelete -> deletedHit", deletedHit);
+    const deletedHit = fetch(`${API}/${id}`, options).then((res) => res.json());
     onRemove(id);
   };
 

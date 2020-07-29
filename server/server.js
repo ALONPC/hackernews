@@ -9,15 +9,15 @@ require("dotenv").config();
 require("./routes/index")(app);
 
 const PORT = process.env.PORT || 8001;
-const HOST = process.env.HOST || "localhost";
+const DBHOST = process.env.DBHOST || "localhost";
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}, host ${HOST}`);
+  console.log(`Server running on port ${PORT}, host ${DBHOST}`);
 });
 
 const connectDb = async () => {
   try {
-    await mongoose.connect(`mongodb://${HOST}:27017/hackernews`, {
+    await mongoose.connect(`mongodb://${DBHOST}:27017/hackernews`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -32,7 +32,7 @@ connectDb();
 const seedDb = async () => {
   const existingHits = await Hit.find().exec();
   if (!!existingHits.length) {
-    console.log("there's data already! no need of a seed");
+    console.log("Up to date!");
   } else {
     const {
       hits,

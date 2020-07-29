@@ -14,15 +14,15 @@ run-unit-test:
   stage: test
   script:
     - npm run test
-deploy-staging:
-  stage: deploy
-  script:
-    - npm run deploy-stage
-  only:
-    - develop
+# deploy-staging:
+#   stage: deploy
+#   script:
+#     - npm run deploy-stage
+#   only:
+#     - develop
 deploy-production:
   stage: deploy
   script:
-    - npm run deploy-prod
+    - npm deploy
   only:
     - master
