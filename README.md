@@ -16,7 +16,7 @@ Runs the client locally
 
 Installs dependencies for the server.
 
-### `npm start`111
+### `npm start`
 
 Runs the server locally
 
