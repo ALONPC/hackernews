@@ -1,5 +1,16 @@
 # Reign Fullstack Developer Test 👑
 
+Simple app that displays cool articles from Hackernews. Built with React, Node.js, MongoDB and Docker.
+If you want to go straight on deploying, just:
+
+### `docker-compose up`
+
+This will run containers for both client and server side, using the MongoDB official image.
+Data is seeded on the first run and a cron job handles the refetching once an hour.
+Endpoints for client and server bellow. 👇
+
+# Commands
+
 ## On the client folder
 
 ### `npm i`
