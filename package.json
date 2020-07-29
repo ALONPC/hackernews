@@ -1,7 +1,0 @@
-{
-  "name": "hackernews-app",
-  "version": "0.1.0",
-  "scripts": {
-    "deploy": "docker-compose up --build"
-  }
-}

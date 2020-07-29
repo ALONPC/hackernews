@@ -9,7 +9,6 @@ build-min-code:
   stage: build
   script:
     - npm install
-    - npm run minifier
 run-unit-test:
   stage: test
   script:
@@ -23,6 +22,6 @@ run-unit-test:
 deploy-production:
   stage: deploy
   script:
-    - npm deploy
+    - docker-compose up
   only:
     - master
