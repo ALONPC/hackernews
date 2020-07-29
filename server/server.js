@@ -24,8 +24,6 @@ const connectDb = async () => {
   }
 };
 
-connectDb();
-
 const seedDb = async () => {
   Hit.collection.drop();
   const { hits } = await fetch(
@@ -46,11 +44,12 @@ const seedDb = async () => {
   console.log("Seed completed!");
 };
 
-// runs the seedDB every hour
-cron.schedule("0 0 */1 * * *", () => {
-  seedDb();
-});
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}, host ${DBHOST}`);
+  connectDb();
+  seedDb();
+  // runs the seedDB every hour
+  cron.schedule("0 0 */1 * * *", () => {
+    seedDb();
+  });
 });
