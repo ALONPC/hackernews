@@ -36,14 +36,14 @@ export const Feed = () => {
     setLoading(false);
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     const options = {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
     };
-    const deletedHit = fetch(`${API}/${id}`, options).then((res) => res.json());
+    await fetch(`${API}/${id}`, options);
     onRemove(id);
   };
 
@@ -55,7 +55,7 @@ export const Feed = () => {
         <Grid item xs={12}>
           <List>
             {!loading && !hits.length && (
-              <Typography variant={"h4"}>Oops! No news yet</Typography>
+              <Typography variant={"h4"}>Oops! No news to show</Typography>
             )}
             {!loading &&
               !!hits.length &&

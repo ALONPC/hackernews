@@ -45,8 +45,8 @@ Deploys a dockerized version of the app.
 
 #### Client
 
-### http://192.168.99.100:3000/
+### http://localhost:3000/
 
 #### Server
 
-### http://192.168.99.100:8000/api/hits
+### http://localhost:8000/api/hits
